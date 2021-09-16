@@ -20,4 +20,5 @@ jobs:
         uses: jstastny/publish-gem-to-github@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          owner: OM30 (editado)
+          owner: OM30
+          working-directory: /zipruby/
