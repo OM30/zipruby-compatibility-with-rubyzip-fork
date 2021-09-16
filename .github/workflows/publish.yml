@@ -1,0 +1,23 @@
+name: Build and Publish gem
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - poc_packages
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: Fetch tags
+        run: git fetch --tags --unshallow
+      - name: Publish gem
+        uses: jstastny/publish-gem-to-github@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: OM30 (editado)
