@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - poc_packages
+      - master
 
 jobs:
   build-publish:
@@ -21,4 +21,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: OM30
-          working-directory: /zipruby/
+          working-directory: ./zipruby
